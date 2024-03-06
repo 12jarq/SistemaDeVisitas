@@ -1,0 +1,41 @@
+.custom-css {
+    padding-top: 130px !important;
+    background: linear-gradient(-90deg, #227df8 0%, #0e740c 100%) !important;
+}
+
+.custom-css-step {
+    padding-top: 70px !important;
+    background: linear-gradient(-90deg, #227df8 0%, #0e740c 100%) !important;
+}
+
+.height-textarea-css {
+    min-height: 100px !important;
+}
+
+.header-type-one .pm-header-support span {
+    color: #ffffff !important;
+    display: block !important;
+}
+
+.pm-home-css-custom {
+    background: linear-gradient(-90deg, #227df8 0%, #0e740c 100%) !important;
+}
+
+.pm-banner-section-1 .pm-banner-content .pm-banner-text a {
+    height: 60px !important;
+    width: 200px !important;
+    display: block !important;
+    font-weight: 700 !important;
+    line-height: 60px !important;
+    text-align: center !important;
+     background-color: #dc3545 !important;
+    transition: 0.3s all ease-in-out !important;
+}
+
+.pm-main-header .pm-header-btn {
+    height: 60px !important;
+    width: 150px !important;
+    line-height: 60px !important;
+    border: 2px solid #3c87eb !important;
+    transition: 0.3s all ease-in-out !important;
+}
