@@ -24,13 +24,14 @@ class DashboardController extends BackendController
     }
     public function index()
     {
+      
 
         if(auth()->user()->getrole->name == 'Employee') {
-            $visitors       = VisitingDetails::where(['employee_id'=>auth()->user()->employee->id])->orderBy('id', 'desc')->get();
+            $visitors       = VisitingDetails::join('visitors','visitors.id','visiting_details.visitor_id')->where(['employee_id'=>auth()->user()->employee->id])->orderBy('id', 'desc')->get();
             $preregister    = PreRegister::where(['employee_id'=>auth()->user()->employee->id])->orderBy('id', 'desc')->get();
             $totalEmployees = 0;
         }else {
-            $visitors       = VisitingDetails::orderBy('id', 'desc')->get();
+            $visitors       = VisitingDetails::join('visitors','visitors.id','visiting_details.visitor_id')->orderBy('visiting_details.id', 'desc')->get();
             $preregister    = PreRegister::orderBy('id', 'desc')->get();
             $employees      = Employee::orderBy('id', 'desc')->get();
             $totalEmployees = count($employees);
@@ -44,7 +45,7 @@ class DashboardController extends BackendController
         $this->data['totalEmployees'] = $totalEmployees;
         $this->data['totalPrerigister']     = $totalPrerigister;
         $this->data['visitors']  = $visitors;
-
+        
         return view('admin.dashboard.index', $this->data);
     }
 

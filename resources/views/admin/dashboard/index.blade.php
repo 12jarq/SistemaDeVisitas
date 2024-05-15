@@ -109,14 +109,15 @@
                                     <th>{{ __('Accion') }}</th>
                                 </tr>
                                     @if(!blank($visitors))
-                                        @foreach($visitors as $visitor)
+                                          @foreach($visitors as $visitor)
                                             @php
                                                 if($loop->index > 5) {
                                                     break;
                                                 }
                                             @endphp
                                             <tr>
-                                               
+                                                <td>{{ $visitor->visitor->first_name }}</td>
+                                                <td>{{ $visitor->visitor->email }}</td>
                                                 <td>{{ $visitor->reg_no }}</td>
                                                 <td>{{ $visitor->employee->user->name }}</td>
                                                 <td>{{ date('d-m-Y h:i A', strtotime($visitor->checkin_at)) }}</td>
